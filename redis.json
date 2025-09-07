@@ -37,7 +37,7 @@
 		},
 		"legend_format": "%5.1lf%s"
 	},
-		"evicted_keys": {
+	"evicted_keys": {
 		"title": "Redis evicted keys on {{PI}}",
 		"vertical": "Keys",
 		"type": "stacked",
@@ -49,7 +49,7 @@
 		},
 		"legend_format": "%5.1lf%s"
 	},
-		"expired_keys": {
+	"expired_keys": {
 		"title": "Redis expired keys on {{PI}}",
 		"vertical": "Keys",
 		"type": "stacked",
@@ -87,6 +87,7 @@
 	},
 	"percent": {
 		"title": "Redis hitratio percent on {{PI}}",
+		"rrdtool_opts": ["-u", "100"],
 		"vertical": "Percent",
 		"legend": {
 			"hitratio": {
@@ -94,7 +95,7 @@
 				"color": "00aa00"
 			}
 		},
-		"legend_format": "%5.1lf%s"
+		"legend_format": "%5.2lf"
 	},
 	"blocked_clients": {
 		"title": "Redis blocked clients on {{PI}}",
@@ -110,8 +111,7 @@
 	},
 	"ps_cputime": {
 		"title": "Redis CPU usage on {{PI}}",
-		"vertical": "Milliseconds/s",
-		"rrdtool_opts": ["-u", "100"],
+		"vertical": "Microseconds/s",
 		"type": "stacked",
 		"legend": {
 			"children-user": {
@@ -131,7 +131,7 @@
 				"color": "ff0000"
 			}
 		},
-		"legend_format": "%5.2lf"
+		"legend_format": "%5.1lf%s"
 	},
 	"pubsub": {
 		"title": "Redis pubsub on {{PI}}",
@@ -156,10 +156,9 @@
 	},
 	"redis_command_cputime": {
 		"title": "Redis commands CPU usage on {{PI}}",
-		"vertical": "Jiffies",
-		"rrdtool_opts": ["-u", "100"],
+		"vertical": "Microseconds/s",
 		"type": "stacked",
-		"legend_format": "%5.2lf"
+		"legend_format": "%5.1lf"
 	},
 	"total_bytes": {
 		"title": "Redis total bytes on {{PI}}",
